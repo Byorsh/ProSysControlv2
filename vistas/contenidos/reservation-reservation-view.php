@@ -15,9 +15,9 @@
         <li>
             <a class="active" href="<?php echo SERVERURL; ?>reservation-reservation/"><i class="far fa-calendar-alt"></i> &nbsp; RESERVACIONES</a>
         </li>
-        <li>
+        <!--<li>
             <a href="<?php echo SERVERURL; ?>reservation-pending/"><i class="fas fa-hand-holding-usd fa-fw"></i> &nbsp; PRÉSTAMOS</a>
-        </li>
+        </li>-->
         <li>
             <a href="<?php echo SERVERURL; ?>reservation-list/"><i class="fas fa-clipboard-list fa-fw"></i> &nbsp; FINALIZADOS</a>
         </li>
@@ -28,6 +28,13 @@
 </div>
 
  <div class="container-fluid">
+ 	<p class="text-center roboto-medium">BUSCAR CLIENTE</p>
+		<p class="text-center">
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalCliente"><i class="fas fa-user-plus"></i> &nbsp; Buscar cliente</button>
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalCliente"><i class="fas fa-user-plus"></i> &nbsp; Agregar cliente</button>
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalCliente"><i class="fas fa-user-plus"></i> &nbsp; Modificar cliente</button>
+			<!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalItem"><i class="fas fa-box-open"></i> &nbsp; Agregar item</button>-->
+		</p>
 	<div class="table-responsive">
 		<table class="table table-dark table-sm">
 			<thead>

@@ -1,6 +1,6 @@
 <div class="full-box page-header">
     <h3 class="text-left">
-        <i class="fas fa-plus fa-fw"></i> &nbsp; NUEVO PRÉSTAMO
+        <i class="fas fa-plus fa-fw"></i> &nbsp; AGREGAR EQUIPO AL TALLER
     </h3>
     <p class="text-justify">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium quod harum vitae, fugit quo soluta. Molestias officiis voluptatum delectus doloribus at tempore, iste optio quam recusandae numquam non inventore dolor.
@@ -10,19 +10,19 @@
 <div class="container-fluid">
     <ul class="full-box list-unstyled page-nav-tabs">
         <li>
-            <a class="active" href="<?php echo SERVERURL; ?>reservation-new/"><i class="fas fa-plus fa-fw"></i> &nbsp; NUEVO PRÉSTAMO</a>
+            <a class="active" href="<?php echo SERVERURL; ?>reservation-new/"><i class="fas fa-plus fa-fw"></i> &nbsp; AGREGAR EQUIPO</a>
         </li>
         <li>
-            <a href="<?php echo SERVERURL; ?>reservation-reservation/"><i class="far fa-calendar-alt"></i> &nbsp; RESERVACIONES</a>
+            <a href="<?php echo SERVERURL; ?>reservation-reservation/"><i class="far fa-calendar-alt"></i> &nbsp; SERVICIO A DOMICILIO</a>
         </li>
-        <li>
+        <!--<li>
             <a href="<?php echo SERVERURL; ?>reservation-pending/"><i class="fas fa-hand-holding-usd fa-fw"></i> &nbsp; PRÉSTAMOS</a>
+        </li>-->
+        <li>
+            <a href="<?php echo SERVERURL; ?>reservation-list/"><i class="fas fa-clipboard-list fa-fw"></i> &nbsp; ESTADO DE EQUIPOS</a>
         </li>
         <li>
-            <a href="<?php echo SERVERURL; ?>reservation-list/"><i class="fas fa-clipboard-list fa-fw"></i> &nbsp; FINALIZADOS</a>
-        </li>
-        <li>
-            <a href="<?php echo SERVERURL; ?>reservation-search/"><i class="fas fa-search-dollar fa-fw"></i> &nbsp; BUSCAR POR FECHA</a>
+            <a href="<?php echo SERVERURL; ?>reservation-search/"><i class="fas fa-search-dollar fa-fw"></i> &nbsp; BUSCAR EQUIPO</a>
         </li>
     </ul>
 </div>
@@ -30,10 +30,12 @@
 <div class="container-fluid">
 	<div class="container-fluid form-neon">
         <div class="container-fluid">
-            <p class="text-center roboto-medium">AGREGAR CLIENTE O ITEMS</p>
+            <p class="text-center roboto-medium">BUSCAR CLIENTE</p>
             <p class="text-center">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalSelCliente"><i class="fas fa-user-plus"></i> &nbsp; Buscar cliente</button>
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalCliente"><i class="fas fa-user-plus"></i> &nbsp; Agregar cliente</button>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalItem"><i class="fas fa-box-open"></i> &nbsp; Agregar item</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalCliente"><i class="fas fa-user-plus"></i> &nbsp; Modificar cliente</button>
+                <!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalItem"><i class="fas fa-box-open"></i> &nbsp; Agregar item</button>-->
             </p>
             <div>
                 <span class="roboto-medium">CLIENTE:</span> 
@@ -43,7 +45,7 @@
                     <button type="button" class="btn btn-danger"><i class="fas fa-user-times"></i></button>
                 </form>
             </div>
-            <div class="table-responsive">
+            <!--<div class="table-responsive">
                 <table class="table table-dark table-sm">
                     <thead>
                         <tr class="text-center roboto-medium">
@@ -123,78 +125,84 @@
                         </tr>
                     </tbody>
                 </table>
-            </div>
+            </div>-->
         </div>
 		<form action="" autocomplete="off">
             <fieldset>
-                <legend><i class="far fa-clock"></i> &nbsp; Fecha y hora de préstamo</legend>
+                <legend><i class="far fa-clock"></i> &nbsp; Fecha y hora de entrada del equipo</legend>
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-12 col-md-6">
                             <div class="form-group">
-                                <label for="prestamo_fecha_inicio">Fecha de préstamo</label>
-                                <input type="date" class="form-control" name="prestamo_fecha_inicio_reg" id="prestamo_fecha_inicio">
+                                <label for="prestamo_fecha_inicio">Fecha de entrada</label>
+                                <input type="date" class="form-control" name="equipo_fecha_inicio_reg" id="equipo_fecha_inicio">
                             </div>
                         </div>
                         <div class="col-12 col-md-6">
                             <div class="form-group">
-                                <label for="prestamo_hora_inicio">Hora de préstamo</label>
-                                <input type="time" class="form-control" name="prestamo_hora_inicio_reg" id="prestamo_hora_inicio">
+                                <label for="prestamo_hora_inicio">Hora de entrada</label>
+                                <input type="time" class="form-control" name="equipo_hora_inicio_reg" id="equipo_hora_inicio">
                             </div>
                         </div>
                     </div>
                 </div>
             </fieldset>
             <fieldset>
-                <legend><i class="fas fa-history"></i> &nbsp; Fecha y hora de entrega</legend>
+                <legend><i class="fas fa-history"></i> &nbsp; Fecha de entrega del equipo</legend>
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-12 col-md-6">
                             <div class="form-group">
-                                <label for="prestamo_fecha_final">Fecha de entrega</label>
-                                <input type="date" class="form-control" name="prestamo_fecha_final_reg" id="prestamo_fecha_final">
+                                <label for="equipo_fecha_final">Fecha Prometida</label>
+                                <input type="date" class="form-control" name="equipo_fecha_final_reg" id="equipo_fecha_final">
                             </div>
                         </div>
-                        <div class="col-12 col-md-6">
-                            <div class="form-group">
-                                <label for="prestamo_hora_final">Hora de entrega</label>
-                                <input type="time" class="form-control" name="prestamo_hora_final_reg" id="prestamo_hora_final">
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
             </fieldset>
 			<fieldset>
-				<legend><i class="fas fa-cubes"></i> &nbsp; Otros datos</legend>
+				<legend><i class="fas fa-cubes"></i> &nbsp; Datos del equipo</legend>
 				<div class="container-fluid">
 					<div class="row">
 						<div class="col-12 col-md-4">
                             <div class="form-group">
-                                <label for="prestamo_estado" class="bmd-label-floating">Estado</label>
-                                <select class="form-control" name="prestamo_estado_reg" id="prestamo_estado">
+                                <label for="equipo_marca" class="bmd-label-floating">Marca</label>
+                                <select class="form-control" name="equipo_marca_reg" id="equipo_marca">
                                     <option value="" selected="" disabled="">Seleccione una opción</option>
-                                    <option value="Reservacion">Reservación</option>
-                                    <option value="Prestamo">Préstamo</option>
-                                    <option value="Finalizado">Finalizado</option>
+                                    <option value="Dell">Dell</option>
+                                    <option value="Hp">Hp</option>
+                                    <option value="Asus">Asus</option>
+                                    <option value="Lenovo">Lenovo</option>
+                                    <option value="Toshiba">Toshiba</option>
+                                    <option value="Gateway">Gateway</option>
+                                    <option value="Acer">Acer</option>
+                                    <option value="Otro">Otro</option>
                                 </select>
                             </div>
                         </div>
 						<div class="col-12 col-md-4">
 							<div class="form-group">
-								<label for="prestamo_total" class="bmd-label-floating">Total a pagar en $</label>
-                                <input type="text" pattern="[0-9.]{1,10}" class="form-control" readonly="" value="100.00" id="prestamo_total" maxlength="10">
+								<label for="equipo_modelo" class="bmd-label-floating">Modelo del equipo</label>
+                                <input type="text" pattern="" class="form-control" readonly="" value="" id="equipo_modelo" maxlength="20">
 							</div>
 						</div>
                         <div class="col-12 col-md-4">
                             <div class="form-group">
-                                <label for="prestamo_pagado" class="bmd-label-floating">Total depositado en $</label>
-                                <input type="text" pattern="[0-9.]{1,10}" class="form-control" name="prestamo_pagado_reg" id="prestamo_pagado" maxlength="10">
+                                <label for="equipo_ns" class="bmd-label-floating">Numero de Serie del equipo</label>
+                                <input type="text" pattern="" class="form-control" name="equipo_ns_reg" id="equipo_ns" maxlength="25">
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-group">
-                                <label for="prestamo_observacion" class="bmd-label-floating">Observación</label>
-                                <input type="text" pattern="[a-zA-z0-9áéíóúÁÉÍÓÚñÑ#() ]{1,400}" class="form-control" name="prestamo_observacion_reg" id="prestamo_observacion" maxlength="400">
+                                <label for="equipo_observacion" class="bmd-label-floating">Observaciones</label>
+                                <input type="text" pattern="[a-zA-z0-9áéíóúÁÉÍÓÚñÑ#() ]{1,400}" class="form-control" name="equipo_observacion_reg" id="equipo_observacion" maxlength="400">
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="equipo_accesorios" class="bmd-label-floating">Accesorios</label>
+                                <input type="text" pattern="[a-zA-z0-9áéíóúÁÉÍÓÚñÑ#() ]{1,400}" class="form-control" name="equipo_accesorios_reg" id="equipo_accesorios" maxlength="400">
                             </div>
                         </div>
 					</div>
@@ -212,7 +220,7 @@
 
 
 <!-- MODAL CLIENTE -->
-<div class="modal fade" id="ModalCliente" tabindex="-1" role="dialog" aria-labelledby="ModalCliente" aria-hidden="true">
+<div class="modal fade" id="ModalSelCliente" tabindex="-1" role="dialog" aria-labelledby="ModalCliente" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">

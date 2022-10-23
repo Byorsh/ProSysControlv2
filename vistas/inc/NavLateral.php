@@ -55,14 +55,14 @@
                         <li>
                             <a href="<?php echo SERVERURL; ?>reservation-reservation/"><i class="far fa-calendar-alt fa-fw"></i> &nbsp; Servicio a domicilio</a>
                         </li>
-                        <li>
+                        <!--<li>
                             <a href="<?php echo SERVERURL; ?>reservation-pending/"><i class="fas fa-hand-holding-usd fa-fw"></i> &nbsp; Préstamos</a>
-                        </li>
+                        </li>-->
                         <li>
                             <a href="<?php echo SERVERURL; ?>reservation-list/"><i class="fas fa-clipboard-list fa-fw"></i> &nbsp; Estado de equipos</a>
                         </li>
                         <li>
-                            <a href="<?php echo SERVERURL; ?>reservation-search/"><i class="fas fa-search-dollar fa-fw"></i> &nbsp; Buscar por fecha</a>
+                            <a href="<?php echo SERVERURL; ?>reservation-search/"><i class="fas fa-search-dollar fa-fw"></i> &nbsp; Buscar equipo</a>
                         </li>
                     </ul>
                 </li>
