@@ -23,7 +23,9 @@
 
             $privilegio = mainModel::limpiar_cadena($_POST['usuario_privilegio_reg']);
 
-            /*---------- Comprobar campos vacios ----------*/
+            echo $rfc."-".$nombre."-".$apellido."-".$telefono."-".$direccion."-".$usuario."-".$email."-".$clave1."-".$privilegio;
+
+            /*---------- Comprobar campos vacios ----------
             if($rfc=="" || $nombre=="" || $apellido=="" || $usuario=="" || $clave1=="" || $clave2==""){
                 $alerta = [
                     "Alerta"=>"simple",
@@ -33,6 +35,6 @@
                 ];
                 echo json_encode($alerta);
                 exit();
-            }
+            }*/
         }
     }
